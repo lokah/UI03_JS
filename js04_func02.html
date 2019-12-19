@@ -12,7 +12,7 @@
 
         alert("명시적 함수");
     }
-    var func02 = function(){
+    var func02 = function(){//함수라는 값이 func02라는 변수에 들어간다.
 
         alert("익명함수");
     }
@@ -21,7 +21,7 @@
 //안녕하세요...문자열은 msg에 들어간다.
     function literalPrn(literal){
 
-        literal("안녕하세요, 리터럴 함수입니다.")
+        literal("안녕하세요, 리터럴 함수입니다.");//("안녕하세요...")의 ()가 값으로 되어 있는 함수를 호출한다는 뜻이다.
     }
     function func03(){
 
@@ -43,18 +43,18 @@
 
     function closureTest(val) {
 
-        var msg = "power";
+        var msg = "!!!!!!!!";
         function addVal(){
             alert(val + msg);
         }
-        return addVal;
+        return addVal;//함수가 값이 되어 리턴된다.
     }
 
     var pmEdu = closureTest("javascript");
 
     function nightEdu(msg){
 
-        closureTest(msg)();
+        closureTest(msg)();//()은 함수를 호출한다는 뜻. 함수가 값으로 넘어올 때는 ()를 해야 그 값을 호출할 수 있다.
     }
 
     </script>
