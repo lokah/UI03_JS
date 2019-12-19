@@ -1,6 +1,6 @@
 function test(){
 
-    window.alert("외부 작성 방식!!!");
+    window.console.log("외부 작성 방식!!!");
 }
 
 window.onload=function(){
