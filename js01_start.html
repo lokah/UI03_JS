@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/test.js"></script>
+    <script type="text/javascript">
+    function embededTest(){
+
+        var doc=document.getElementsByTagName("li")[1];
+        doc.style.color="red";
+        doc.innerHTML="<strong>글자가 바뀌었다.</strong>";
+    }
+
+    </script>
+</head>
+<body>
+    <h1>자바 스크립트 작성방식 3가지</h1>
+    <ul>
+        <li onclick="alert('inline');">inline 방식</li>
+        <li onclick="embededTest();">내부 작성 방식</li>
+        <li onclick="test();">외부 작성 방식(링크)</li>
+    </ul>
+</body>
+</html>
