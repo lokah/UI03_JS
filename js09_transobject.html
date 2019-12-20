@@ -79,7 +79,7 @@ function evalTest(){
     <hr>
     <h1>숙제</h1>
     <input type="number" id="myNum01">
-    <input type="text" list="mylist">
+    <input type="text" list="mylist" id="mylist1">
     <datalist id="mylist">
 
         <option value="+">
@@ -107,7 +107,7 @@ function evalTest(){
             //txt = txt+val03.options[i].value;
         //}
         //document.getElementById("cal").innerHTML = txt;
-        var val03 = document.getElementById("mylist").options[0].value;
+        var val03 = document.getElementById("mylist1").value; //input에 id 부여하고 그 값을 받으면 된다.
         //var val04 = document.getElementById("mylist").options[1].value;
        // var val05 = document.getElementById("mylist").options[2].value;
         //var val06 = document.getElementById("mylist").options[3].value;
