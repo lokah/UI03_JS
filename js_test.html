@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+    function gugudan(){
+
+        var res ="<br>";
+    
+        for(var i=2; i<10; i++){
+            res += i+"단 <br>";
+
+            for(j=1; j<10; j++){
+                res+= i+"*"+j+"="+(i*j) + "<br>";
+
+                
+               
+            }
+            
+        } 
+        document.getElementById("re").innerHTML = res;
+    }
+
+    function gugu() {
+
+        var gu1 = prompt("원하는 구구단의 단을 입력하라");
+        switch(gu1) {
+
+            case "1" :
+            alert()
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    
+<h1>구구단</h1>
+<h3>1. 구구단 전체 출력</h3>
+<input type="button" value="클릭" onclick="gugudan();">
+<span id="re"></span>
+<h3>2. 구구단 선택 줄력</h3>
+<p>promt를 사용하여 입력받은 단만 출력하자</p>
+<input type="button" value="클릭" onclick="gugu();">
+<!--출력은 자유 (span tag or alert or console-->
+<span id="res"></span>
+
+</body>
+</html>

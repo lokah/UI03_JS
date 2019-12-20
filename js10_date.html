@@ -12,6 +12,9 @@
 
         document.getElementsByTagName("button")[0].onclick=testDate01;
         document.getElementsByTagName("button")[1].onclick=testDate02;
+        document.getElementsByTagName("button")[2].onclick=testDate03;
+        document.getElementsByTagName("button")[3].onclick=testDate04;
+        document.getElementsByTagName("button")[4].onclick=testDate05;
     }
     
     function testDate01() {
@@ -33,16 +36,55 @@
         var year = date1.getFullYear();
         var month = ""+ (date1.getMonth()+1);
         var day = "" + date1.getDate();
+        var week = date1.getDay();
+        var wrr = ["일요일", "월요일","화요일", "수요일","목요일","금요일","토요일"];
         var hour = ""+date1.getHours();
         var min = ""+ date1.getMinutes();
-        var sec = "" + date1.getSeconds(); getDate
+        var sec = "" + date1.getSeconds();
         if(month.length<2) {month = "0"+month};
         if(day.length<2) {day = "0" + day};
         if(hour.length<2){hour = "0"+ hour};
         if(min.length<2){min = "0"+ min};
         if(sec.length<2) {sec = "0"+sec};
         
-        inputDate1.innerHTML = year +"/"+ month +"/"+ day +"----"+ hour + "/"+ min + "/"+ sec+ "<br>";
+        inputDate1.innerHTML = year +"/"+ month +"/"+ day +"/"+ wrr[week]+"----"+ hour + "/"+ min + "/"+ sec+ "<br>";
+    }
+
+
+    function testDate03(){
+
+        var year = 2019;
+        var month = 10;
+        var day = 30;
+        var date = new Date(year, month-1, day);
+
+        document.getElementById("specific").innerHTML = date;
+    }
+
+
+    function testDate04(){
+
+        var dates = document.getElementById("dates").value;
+        console.log(dates + ":" + typeof(dates));
+        var inputDate = document.getElementById("inputDate").value;
+        console.log(inputDate + ":" + typeof(inputDate));
+        var date = new Date(dates);
+        date.setDate(date.getDate() + parseInt(inputDate));
+        document.getElementById("result").value = date.toLocaleDateString();
+
+    }
+    
+    function testDate05() {
+        var endDate = document.getElementById("inputDate02").value;
+        var startDate = document.getElementById("dates02").value;
+         
+        var date = new Date(startDate);
+        var after = new Date(endDate);
+        var result = (after.getTime() - date.getTime())/(1000*60*60*24);
+    
+        document.getElementById("result02").value = result;
+
+
     }
     </script>
 </head>
@@ -52,6 +94,34 @@
     <span id="today"></span><br>
     <button>오늘 날짜</button>
     <button>오늘 날짜(표현)</button>
+
+    <hr>
+
+    <h1>특정 날짜 출력하기</h1>
+    <span id="specific"></span><br>
+    <button >특정 날짜</button>
+    <hr>
+
+    <h1>경과</h1>
+    <label>지정날짜</label>
+    <input type="date" id="dates" size="50"><br>
+    <label>경과일</label>
+    <input type="number" id="inputDate"><br>
+    <label>경과 후 날짜</label>
+    <input type="text" id="result" readonly="readonly">
+    <button>경과날짜</button>
+    <hr>
+
+    <h1>D-day 기능 만들기</h1>
+    <label>시작 날짜</label>
+    <input type="date" id="dates02" size="50"><br>
+    <label>종료 날짜</label>
+    <input type="date" id="inputDate02"><br>
+    <label>남은 일수</label>
+    <input type="text" id="result02" readonly="readonly">
+    <button>남은 일수 구하기</button>
+    <!--getTime() : milliseconds 반환-->
+
 
 
 </body>
