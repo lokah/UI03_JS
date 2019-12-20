@@ -118,6 +118,41 @@ function evalTest(){
                    // document.getElementById("cal").innerHTML = "<b> 계산결과 :" + eval(val01+ val06+ val02)+"<b>";
 
     }
+/*
+위의 input 3부분에 모두 class="a"를 준다.
+    function calc() {
+
+        var doc = document.querySelectorAll(".a");
+        var res = "";
+        for(var i=0; i<doc.length;i++){
+
+            res += doc[i].value;
+        }
+        document.getElementsByTagName("span")[1].innerHTML=eval(res);
+
+    }
+
+    
+    
+input 3부분에 각각 다른 id를 부여한 후에...각기 변수에 값을 저장하고
+    function calc() {
+        var input01 = document.getElementById("input01");
+        var opr01 = document.getElementById("opr01");
+        var input02 = document.getElementById("input02");
+var res = eval(input01.value + opr01.value + input02.value);
+document.getElementsByTagName("span")[1].innerHTML = res;
+}
+
+    //name으로 할 경우 위 input 3 부분에 똑같이 name="test"로 하고
+function calc(){
+    var input01 = document.getElementsByName("test")[0];
+        var opr01 = document.getElementsByName("test")[1];
+        var input02 = document.getElementsByName("test")[2];
+        var res = eval(input01.value + opr01.value + input02.value);
+        document.getElementsByTagName("span")[1].innerHTML = res;
+
+}
+*/
     </script>
 <script type="text/javascript">
 

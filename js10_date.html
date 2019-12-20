@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+    onload=function(){
+
+        document.getElementsByTagName("button")[0].onclick=testDate01;
+        document.getElementsByTagName("button")[1].onclick=testDate02;
+    }
+    
+    function testDate01() {
+
+        var inputDate = document.getElementById("today");
+        var date = new Date(); //날짜 객체 생성.
+        inputDate.innerHTML = date.toDateString() + "<br>";
+        inputDate.innerHTML += date.toLocaleDateString() + "<br>";
+        inputDate.innerHTML += date.toLocaleTimeString() + "<br>";
+        inputDate.innerHTML += date.toLocaleString() + "<br>";
+    }
+
+    function testDate02() {
+
+        // 2019/12/20/ 으로 출력하기
+        var inputDate1 = document.getElementById("today");
+        
+        var date1 = new Date();
+        var year = date1.getFullYear();
+        var month = ""+ (date1.getMonth()+1);
+        var day = "" + date1.getDate();
+        var hour = ""+date1.getHours();
+        var min = ""+ date1.getMinutes();
+        var sec = "" + date1.getSeconds();
+        if(month.length<2) {month = "0"+month};
+        if(day.length<2) {day = "0" + day};
+        if(hour.length<2){hour = "0"+ hour};
+        if(min.length<2){min = "0"+ min};
+        if(sec.length<2) {sec = "0"+sec};
+        
+        inputDate1.innerHTML = year +"/"+ month +"/"+ day +"----"+ hour + "/"+ min + "/"+ sec+ "<br>";
+    }
+    </script>
+</head>
+<body>
+    
+    <h1>오늘 날짜 출력하기</h1>
+    <span id="today"></span><br>
+    <button>오늘 날짜</button>
+    <button>오늘 날짜(표현)</button>
+
+
+</body>
+</html>
