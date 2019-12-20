@@ -33,7 +33,7 @@
     
     function intTest(val) {
 
-        val vals = parseInt(val) +5;
+        var vals = parseInt(val) +5;
         alert(vals + ":" + typeof(vals));
     }
     
@@ -48,23 +48,24 @@
 
     function floatTest(val){
 
-        val vals = parseFloat(val) + 5;
+        var vals = parseFloat(val) + 5;
         alert(vals + ":" + typeof(vals));
     }
 
     </script>
-
+    
     <h2>4.검증 함수</h2>
     <p>문자열로 된 코드를 자바스크립트로 읽어들여 계산한다.</p>
     <input type="text" name = "evalue" placeholder="예) 5+10">
     <button onclick="evalTest();">계산</button>
     <span></span>
+    
 
     <script type="text/javascript">
 
 function evalTest(){
 
-    val val = document.getElementsByName("evalue")[0];
+    var val = document.getElementsByName("evalue")[0];
     if(confirm("작성하신 코드가 맞나요? : "+ val.value)){
         document.getElementsByTagName("span")[0].innerHTML="<b> 계산결과 : " + eval(val.value) + "<b>";
     }else{
@@ -77,7 +78,7 @@ function evalTest(){
 
     <hr>
     <h1>숙제</h1>
-    <input type="number">
+    <input type="number" id="myNum01">
     <input type="text" list="mylist">
     <datalist id="mylist">
 
@@ -88,10 +89,27 @@ function evalTest(){
 
             
     </datalist>
-    <input type="number">
+    <input type="number" id="myNum02">
     <button onclick="calc();">계산</button>
-    <span></span>
+    <span id="cal"></span>
 
+    <script>
+    function calc() {
+
+        var val01 = document.getElementById("myNum01").value;
+        var val02 = document.getElementById("myNum02").value;
+        var val03 = document.getElementById("mylist").options[0].value;
+        //var val04 = document.getElementById("mylist").options[1].value;
+       // var val05 = document.getElementById("mylist").options[2].value;
+        //var val06 = document.getElementById("mylist").options[3].value;
+        
+        document.getElementById("cal").innerHTML = "<b> 계산결과 :" + eval(val01+ val03+ val02)+"<b>";
+           // document.getElementById("cal").innerHTML = "<b> 계산결과 :" + eval(val01+ val04+ val02)+"<b>";
+               // document.getElementById("cal").innerHTML = "<b> 계산결과 :" + eval(val01+ val05+ val02)+"<b>";
+                   // document.getElementById("cal").innerHTML = "<b> 계산결과 :" + eval(val01+ val06+ val02)+"<b>";
+
+    }
+    </script>
 <script type="text/javascript">
 
 

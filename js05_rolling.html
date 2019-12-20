@@ -24,6 +24,7 @@
         if(num<1) {
 
             num=6;
+            
         }
         document.getElementById("gallery").src="image/img0"+ num+ ".png";
         return false;// 이벤트 전파 막기
@@ -36,7 +37,7 @@
 
             num=1;
         }
-        document.getElementById("gallery").src="image/img0" + ".png";
+        document.getElementById("gallery").src="image/img0" + num+ ".png";
         return false;
 
     }
@@ -47,9 +48,9 @@
 
     <div id="gallerywrap">
 <p>
-    <a href="http://wwww.naver.com" onclick="return preGallery();">
+    <a href="http://www.naver.com" onclick=" return preGallery();">
     <img src="image/arrowleft.png" alt="이전 그림"></a>
-    <img src="image/img0.png" alt="갤러리 그림" id="gallery">
+    <img src="image/img01.png" alt="갤러리 그림" id="gallery">
     <a href="#next" onclick="nextGallery();">
     <img src="image/arrowright.png" alt="다음 그림"></a>
 </p>
