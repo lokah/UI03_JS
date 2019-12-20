@@ -18,24 +18,75 @@
             for(j=1; j<10; j++){
                 res+= i+"*"+j+"="+(i*j) + "<br>";
 
-                
+                 
                
             }
             
         } 
-        document.getElementById("re").innerHTML = res;
+      document.getElementById("re").innerHTML = res; 
     }
 
+    function gu(gu1){
+        //var gu1 = prompt("원하는 구구단의 단을 입력하라");
+        var res ="<br>";
+                for(var i=gu1;i<=gu1;i++){
+                    
+                    for(j =1;j<10;j++){
+                        
+                        res+= i+"*"+j+"="+(i*j) + "<br>";
+
+
+                    }
+                }
+            document.getElementById("res").innerHTML = res;
+            
+    }
+
+    function gugu() {
+
+        var gu1 = prompt("원하는 구구단의 단을 입력해!");
+        gu(gu1) ;
+
+    }
+/*
     function gugu() {
 
         var gu1 = prompt("원하는 구구단의 단을 입력하라");
         switch(gu1) {
 
-            case "1" :
-            alert()
+            case "2" :
+                var res ="<br>";
+                for(var i=2;i<3;i++){
+                    
+                    for(j =1;j<10;j++){
+                        
+                        res+= i+"*"+j+"="+(i*j) + "<br>";
+
+
+                    }
+                }
+            document.getElementById("res").innerHTML = res;
+            break;
+
+            case "3" :
+            var res ="<br>";
+                for(var i=3;i<4;i++){
+                    
+                    for(j =1;j<10;j++){
+                        
+                        res+= i+"*"+j+"="+(i*j) + "<br>";
+
+
+                    }
+                }
+            document.getElementById("res").innerHTML = res;
+            break;
+
+
+
         }
     }
-    
+    */
     </script>
 </head>
 <body>
@@ -47,7 +98,7 @@
 <h3>2. 구구단 선택 줄력</h3>
 <p>promt를 사용하여 입력받은 단만 출력하자</p>
 <input type="button" value="클릭" onclick="gugu();">
-<!--출력은 자유 (span tag or alert or console-->
+<!--출력은 자유 (span tag or alert or console)-->
 <span id="res"></span>
 
 </body>
