@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+    function createEle() {
+
+        var div = document.createElement('div');
+        //1번 방법
+        var attr = document.createAttribute('style');
+        //style =''
+        attr.nodeValue = 'border : 1px solid blue';
+        //style = 'border:1px solid blue'
+        div.setAttributeNode(attr);
+        //<div style = 'border : 1px solid blue'></div>
+        
+        //2번방법
+
+        //div.setAttribute('style', 'border:1px solid blue');
+
+        var txt = document.createTextNode('엘리먼트 생성');
+        div.appendChild(txt);
+        document.body.appendChild(div);
+        // 1. 엘리먼트 객체 생성 :createElement('String tagname');
+        // 2. 속성 추가
+        // 2-1 속성 생성 : createAttribure('String attrName')
+        //     속성 추가 : setAttributeNode(Attr attr);
+        // 2-2 한 번에 생성 : setAttribute('String attr', 'String value');
+        // text 객체 생성 : createTextNode('String text');
+
+
+    }
+    
+    </script>
+</head>
+<body>
+    
+    <button onclick="createEle();">'createElement();' 앨리먼트 생성하기</button>
+
+</body>
+</html>
