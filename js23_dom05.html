@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+    p{
+
+        border : 1px solid red;
+    }
+    #test01,#test02{
+
+        width: 300px;
+        height: 300px;
+        border: 1px dotted blue;
+    }
+    </style>
+    <script>
+    
+    function addAppend(){
+
+        var fieldset = document.getElementById('addelement');
+        var p = document.createElement('p');
+        //var txt = document.createTextNode("자식태그들 중 마지막에 dgsfgsegsagegtgegwegwgwgwgwgwegwg붙여넣는다");
+        //p.appendChild(txt);
+        p.textContent = '자식태그들 중 마지막에 추가한다.'
+        fieldset.appendChild(p);
+
+    }
+
+    function addBefore(){
+
+        var fieldset = document.getElementById('addelement');
+        var newP = document.createElement('p');
+        newP.textContent = '엘리먼트 앞에 붙여놓는다'
+        var oldDiv = document.querySelector('fieldset>div');
+        fieldset.insertBefore(newP, oldDiv);
+    }
+    function moveElement() {
+
+        var moveElem = document.querySelector('fieldset').children[1];
+        var addElem = document.body;
+        addElem.appendChild(moveElem); //이미 만들어진 요소를 append하면 이동한다.
+    }
+
+    function addTest(){
+
+        var add = document.getElementById('test01');
+        var adda = document.createElement('div')
+        adda.textContent ='dom test';
+        add.appendChild(adda);
+    }
+
+    function moveTest(){
+        var move = document.getElementById('test01').children[0];
+        var adde = document.getElementById('test02')
+        adde.appendChild(move);
+
+    }
+    //childNodes와 children의 차이점은????
+    </script>
+</head>
+<body>
+    
+    <h1>태그 추가하기</h1>
+    <button onclick="addAppend();">appendChild()</button>
+    <button onclick="addBefore()">insertBefore()</button>
+    <button onclick="moveElement()">appendChild를 이용한 엘리먼트 이동</button>
+
+    <fieldset id="addelement">
+        <legend>부모 태그</legend>
+        <div>div 태그</div>
+    </fieldset>
+    <h3>문제1 : test01 태그에 'dom test'라는 내용을 가진 div 태그를 추가하자</h3>
+    <button onclick="addTest();">click</button>
+    <h3>
+        문제2: test01태그에 추가된 태그들을 test02로 이동시키자
+        <button onclick="moveTest()">click</button>
+    </h3>
+
+    *test01
+    <div id="test01"></div>
+    *test02
+    <div id="test02"></div>
+
+</body>
+</html>
